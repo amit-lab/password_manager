@@ -86,10 +86,10 @@ def search_entry():
         website = website_entry.get()
         if len(website) == 0:
             return
-        try:
+        elif website in data:
             messagebox.showinfo(title=website, message=f"email: {data[website]['email']}\n"
                                                        f"password: {data[website]['password']}")
-        except KeyError:
+        else:
             messagebox.showerror(title="error", message=f"There is no email and password is saved for '{website}'")
 
 
